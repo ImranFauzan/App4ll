@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC107"
+    android:backgroundTint="#FFC107"
+    android:scrollbarSize="10dp"
+    tools:context=".HomeFragment">
+
+    <TextView
+        android:id="@+id/IndianText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:text="INDIAN"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+    <TextView
+        android:id="@+id/ChineseText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="76dp"
+        android:fontFamily="serif"
+        android:text="CHINESE"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnChinese" />
+
+    <TextView
+        android:id="@+id/HomeTitle"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="168dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Which race would you like to learn more about?"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/BtnMalay"
+        android:layout_width="146dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="128dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/malay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/HomeTitle" />
+
+    <ImageButton
+        android:id="@+id/BtnChinese"
+        android:layout_width="146dp"
+        android:layout_height="137dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="fitCenter"
+        android:src="@drawable/chinese"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/BtnMalay"
+        app:layout_constraintTop_toTopOf="@+id/HomeTitle" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        android:layout_width="146dp"
+        android:layout_height="137dp"
+        android:layout_marginEnd="132dp"
+        android:layout_marginBottom="92dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/indian"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnChinese"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/MalayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableTint="#FBFBFB"
+        android:fontFamily="serif"
+        android:text="MALAY"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@+id/ChineseText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BtnMalay" />
+</androidx.constraintlayout.widget.ConstraintLayout>
