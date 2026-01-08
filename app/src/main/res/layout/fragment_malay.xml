@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFC107"
+    android:textAlignment="center"
+    tools:context=".malay">
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="199dp"
+        android:layout_height="220dp"
+        android:src="@drawable/malay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <TextView
+        android:id="@+id/TV_MALAY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MALAY"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.311" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="352dp"
+        android:layout_height="164dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="92dp"
+        android:fontFamily="serif"
+        android:text="Malay refers to one of the main ethnic groups in Malaysia. Malays are known for their traditions and strong values of togetherness. They usually speak Bahasa Melayu. Family, politeness and harmony are important values in Malay society."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
