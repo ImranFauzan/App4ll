@@ -1,65 +1,35 @@
 package com.example.app4ll;
 
+import android.graphics.Color;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link QuizFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class QuizFragment extends Fragment {
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
+public class QuizFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    TextView totalquestions, question;
+    Button ansA, ansB, ansC, ansD, submitBtn;
+    int score = 0;
+    int totalQuestion = questions.length;
+    int currentQuestionIndex = 0;
+    String selectedAnswer = "";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public QuizFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment QuizFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static QuizFragment newInstance(String param1, String param2) {
-        QuizFragment fragment = new QuizFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    public static String questions[] ={
+    public static String questions[] = {
             "What are the main races in Malaysia?",
             "Which one is not programming language? ",
             "Where are you watching this video?"
     };
 
-    public static String choices[][] ={
-            {"Malay, Chinese, Indian","Malay, Chinese ","Malay, Iban, Chinese" ,"Malay, Indian, Iban", "Malay, Chinese"},
-            {"Java","Kotlin","Notepad","Python"},
-            {"Facebook","Whatsapp","Facebook","Youtube"},
-
+    public static String choices[][] = {
+            {"Malay, Chinese, Indian", "Malay, Chinese ", "Malay, Iban, Chinese", "Malay, Indian, Iban"},
+            {"Java", "Kotlin", "Notepad", "Python"},
+            {"Facebook", "Whatsapp", "Instagram", "Youtube"},
     };
 
     public static String correctAnswer[] = {
@@ -68,21 +38,87 @@ public class QuizFragment extends Fragment {
             "Youtube",
     };
 
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quiz, container, false);
+        View view = inflater.inflate(R.layout.fragment_quiz, container, false);
+
+        totalquestions = view.findViewById(R.id.total_question);
+        question = view.findViewById(R.id.question);
+        ansA = view.findViewById(R.id.ans_A);
+        ansB = view.findViewById(R.id.ans_B);
+        ansC = view.findViewById(R.id.ans_C);
+        ansD = view.findViewById(R.id.ans_D);
+        submitBtn = view.findViewById(R.id.submit_btn);
+
+        ansA.setOnClickListener(this);
+        ansB.setOnClickListener(this);
+        ansC.setOnClickListener(this);
+        ansD.setOnClickListener(this);
+        submitBtn.setOnClickListener(this);
+
+        totalquestions.setText("Total Questions: " + totalQuestion);
+        loadnewQuestion();
+
+        return view;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        ansA.setBackgroundColor(Color.WHITE);
+        ansB.setBackgroundColor(Color.WHITE);
+        ansC.setBackgroundColor(Color.WHITE);
+        ansD.setBackgroundColor(Color.WHITE);
+
+        Button clickedButton = (Button) v;
+        if (clickedButton.getId() == R.id.submit_btn) {
+            if (selectedAnswer.equals(correctAnswer[currentQuestionIndex])) {
+                score++;
+            }
+            currentQuestionIndex++;
+            loadnewQuestion();
+
+        } else {
+            selectedAnswer = clickedButton.getText().toString();
+            clickedButton.setBackgroundColor(Color.GRAY);
+        }
+    }
+
+    private void loadnewQuestion() {
+
+        if (currentQuestionIndex == totalQuestion) {
+            finishQuiz();
+            return;
+        }
+        question.setText(questions[currentQuestionIndex]);
+        ansA.setText(choices[currentQuestionIndex][0]);
+        ansB.setText(choices[currentQuestionIndex][1]);
+        ansC.setText(choices[currentQuestionIndex][2]);
+        ansD.setText(choices[currentQuestionIndex][3]);
+        selectedAnswer = ""; // Reset selected answer for the new question
+    }
+
+    private void finishQuiz() {
+        String passStatus = "";
+        if (score > totalQuestion * 0.6) {
+            passStatus = "Passed";
+        } else {
+            passStatus = "Failed";
+        }
+
+        new AlertDialog.Builder(getContext())
+                .setTitle(passStatus)
+                .setMessage("Your score is: " + score + " out of " + totalQuestion)
+                .setPositiveButton("Restart", (dialogInterface, i) -> restartQuiz())
+                .setCancelable(false)
+                .show();
+    }
+
+    private void restartQuiz() {
+        score = 0;
+        currentQuestionIndex = 0;
+        loadnewQuestion();
     }
 }
