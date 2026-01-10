@@ -121,8 +121,8 @@
 
                         <CheckBox
                             android:id="@+id/btnFavThosai"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:background="@drawable/selector_favorite"
                             android:button="@null"
                             android:checked="false" />
@@ -185,8 +185,8 @@
 
                         <CheckBox
                             android:id="@+id/btnFavRoti"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:background="@drawable/selector_favorite"
                             android:button="@null"
                             android:checked="false" />
@@ -249,8 +249,8 @@
 
                         <CheckBox
                             android:id="@+id/btnFavBeriyani"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
                             android:background="@drawable/selector_favorite"
                             android:button="@null"
                             android:checked="false" />
@@ -310,12 +310,12 @@
                 <Button
                     android:id="@+id/btnDiscoverMahbub"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="48dp"
                     android:layout_marginBottom="12dp"
                     android:backgroundTint="#FF9800"
                     android:text="Discover Now"
-                    android:textSize="12sp"
-                    android:textColor="#FFFFFF"/>
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -336,11 +336,11 @@
                 <Button
                     android:id="@+id/btnDiscoverPelita"
                     android:layout_width="wrap_content"
-                    android:layout_height="35dp"
+                    android:layout_height="48dp"
                     android:backgroundTint="#FF9800"
                     android:text="Discover Now"
-                    android:textSize="12sp"
-                    android:textColor="#FFFFFF"/>
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
