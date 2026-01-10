@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -40,8 +39,8 @@ public class IndianFood extends Fragment {
 
 
         // Discover Button
-        Button btnThosaiCafe = view.findViewById(R.id.btnDiscoverThosaiCafe);
-        Button btnSafuan = view.findViewById(R.id.btnDiscoverSafuan);
+        Button btnThosaiCafe = view.findViewById(R.id.btnDiscoverMahbub);
+        Button btnSafuan = view.findViewById(R.id.btnDiscoverPelita);
 
         btnThosaiCafe.setOnClickListener(v -> {
             String url = "http://pelita.com.my/";
