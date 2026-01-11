@@ -2,10 +2,12 @@ package com.example.app4ll;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -14,18 +16,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-    EditText loginUsername, loginPassword;
-    TextView signupRedirectText, forgotPasswordText;
-    Button loginButton;
+    private EditText loginEmail, loginPassword;
+    private TextView signupRedirectText, forgotPasswordText;
+    private Button loginButton;
+    private FirebaseAuth mAuth;
 
 
     @Override
@@ -39,22 +40,21 @@ public class LoginActivity extends AppCompatActivity {
             return insets;
         });
 
-        loginUsername = findViewById(R.id.login_username);
+        loginEmail = findViewById(R.id.login_email); 
         loginPassword = findViewById(R.id.login_password);
         loginButton = findViewById(R.id.login_button);
         signupRedirectText = findViewById(R.id.signupRedirectText);
         forgotPasswordText = findViewById(R.id.forgotPasswordText);
 
+        mAuth = FirebaseAuth.getInstance();
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!validateUsername() | !validatePassword()) {
-                    return;
-                } else {
-                    checkUser();
-                }
+                loginUser();
             }
         });
+
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,59 +72,40 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public boolean validateUsername() {
-        String val = loginUsername.getText().toString();
-        if (val.isEmpty()) {
-            loginUsername.setError("Username cannot be empty");
-            return false;
-        } else {
-            loginUsername.setError(null);
-            return true;
+    private void loginUser() {
+        String email = loginEmail.getText().toString().trim();
+        String password = loginPassword.getText().toString().trim();
+
+        if (email.isEmpty()) {
+            loginEmail.setError("Email is required");
+            loginEmail.requestFocus();
+            return;
         }
-    }
 
-    public boolean validatePassword() {
-        String val = loginPassword.getText().toString();
-        if (val.isEmpty()) {
-            loginPassword.setError("Password cannot be empty");
-            return false;
-        } else {
-            loginPassword.setError(null);
-            return true;
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            loginEmail.setError("Please enter a valid email");
+            loginEmail.requestFocus();
+            return;
         }
-    }
 
-    public void checkUser() {
-        String userUsername = loginUsername.getText().toString().trim();
-        String userPassword = loginPassword.getText().toString().trim();
+        if (password.isEmpty()) {
+            loginPassword.setError("Password is required");
+            loginPassword.requestFocus();
+            return;
+        }
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users");
-        Query checkUserDatabase = reference.orderByChild("username").equalTo(userUsername);
-        checkUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    loginUsername.setError(null);
-                    String passwordFromDB = snapshot.child(userUsername).child("password").getValue(String.class);
-                    if (passwordFromDB.equals(userPassword)) {
-                        loginUsername.setError(null);
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    } else {
-                        loginPassword.setError("Invalid Credentials");
-                        loginPassword.requestFocus();
-                    }
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    loginUsername.setError("User does not exist");
-                    loginUsername.requestFocus();
+                    Toast.makeText(LoginActivity.this, "Login failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
-                }
-
+    }
 }

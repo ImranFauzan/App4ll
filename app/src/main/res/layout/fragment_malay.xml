@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#FFC107"
     android:textAlignment="center"
-    tools:context=".malay">
+    tools:context=".MalayFragment">
 
     <ImageView
         android:id="@+id/imageView11"
