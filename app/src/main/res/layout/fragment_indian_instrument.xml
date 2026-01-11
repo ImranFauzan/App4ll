@@ -2,7 +2,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FF9800">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,50 +24,51 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp"
             android:text="1) String Instruments"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="10dp"
-            android:paddingBottom="6dp"/>
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/sitarbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#FFF3CD"
             android:orientation="vertical"
-            android:padding="12dp"
-            android:background="#FFF3CD">
+            android:padding="12dp">
 
             <ImageView
-                android:id="@+id/imgString"
+                android:id="@+id/imgsitar"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/sitar"/>
+                android:src="@drawable/sitar" />
 
             <TextView
                 android:id="@+id/txtStringDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Sitar: A plucked string instrument known for its rich resonance and used widely in Hindustani classical music."
-                android:paddingTop="8dp"/>
+                android:paddingTop="8dp"
+                android:text="Sitar: A long-necked plucked string instrument with a deep, pear-shaped gourd. Known for its sympathetic strings that vibrate to create a shimmering sound, it is the most iconic instrument of the Hindustani tradition in Malaysia." />
 
             <Button
-                android:id="@+id/btnStringPlay"
+                android:id="@+id/btnSitarPlay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Play Sample"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
-        <!-- 2) PERCUSSION -->
         <LinearLayout
+            android:id="@+id/tamburabox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F8F0BA"
+            android:background="#FFF3CD"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView20"
+                android:id="@+id/imgtambura"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerInside"
@@ -76,163 +78,224 @@
                 android:id="@+id/anotherindianinstrument"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Another indian instument desc here" />
+                android:text="Tambura : A four-stringed long-necked lute that is not played melodically. Instead, it is plucked continuously to provide a drone. This creates the harmonic foundation that all other musicians use to stay in tune." />
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
+                android:id="@+id/btnTamburaPlay"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
+        <!-- 2) PERCUSSION -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"
             android:text="2) Percussion Instruments"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="6dp"/>
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/tablabox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D1ECF1"
             android:orientation="vertical"
-            android:padding="12dp"
-            android:background="#D1ECF1">
+            android:padding="12dp">
 
             <ImageView
-                android:id="@+id/imgPercussion"
+                android:id="@+id/imgtabla"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/tabla"/>
+                android:src="@drawable/tabla" />
 
             <TextView
                 android:id="@+id/txtPercussionDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tabla: A pair of hand drums that create complex rhythms in Indian classical music."
-                android:paddingTop="8dp"/>
+                android:paddingTop="8dp"
+                android:text="Tabla: A pair of small hand drums (the wooden Dayan and metal Bayan). It is the primary percussion for Hindustani music and is widely used in Malaysia for Ghazals, Bhajans (devotional songs), and contemporary fusion." />
 
             <Button
-                android:id="@+id/btnPercussionPlay"
+                android:id="@+id/btnTablaPlay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Play Sample"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
-        <!-- 3) WIND -->
+
         <LinearLayout
             android:id="@+id/mridangambox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#95E2D9"
+            android:background="#D1ECF1"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView21"
+                android:id="@+id/imgmridangan"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:scaleType="centerInside"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/mridangam" />
 
             <TextView
                 android:id="@+id/textView27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mridangam : a traditional indian percussion" />
+                android:text="Mridangam :A double-sided, barrel-shaped drum made of wood. It is the king of percussion in Carnatic music. In Malaysia, it is essential for South Indian classical dance (Bharatanatyam) and temple concerts." />
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:id="@+id/btnmridangamPlay"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
+        <!-- 3) WIND -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"
             android:text="3) Wind Instruments"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="6dp"/>
+            android:textStyle="bold" />
 
         <LinearLayout
+            android:id="@+id/bansuribox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#E2E3E5"
             android:orientation="vertical"
-            android:padding="12dp"
-            android:background="#E2E3E5">
+            android:padding="12dp">
 
             <ImageView
                 android:id="@+id/imgWind"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/bansuri_flute"/>
+                android:src="@drawable/bansuri_flute" />
 
             <TextView
                 android:id="@+id/txtWindDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Bansuri: A bamboo flute with a soft, expressive tone often used in devotional and classical music."
-                android:paddingTop="8dp"/>
+                android:paddingTop="8dp"
+                android:text="Bansuri: A side-blown flute made from a single shaft of bamboo. It is deeply spiritual, often associated with Lord Krishna. In Malaysia, it is favored for its meditative, vocal-like quality in both classical and light music." />
 
             <Button
-                android:id="@+id/btnWindPlay"
+                android:id="@+id/btnBansuriPlay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Play Sample"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
-        <!-- 4) SOLID -->
+        <LinearLayout
+            android:id="@+id/nadaswarambox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E2E3E5"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView23"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/nadaswaram" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nadaswaram : A large, powerful double-reed wind instrument (similar to an oboe but much louder). In Malaysian Indian culture, it is considered auspicious (Mangala Vadyam) and is indispensable at weddings and temple processions to signal celebration." />
+
+            <Button
+                android:id="@+id/btnNadaswaramPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"
             android:text="4) Solid Instruments"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="16dp"
-            android:paddingBottom="6dp"/>
+            android:textStyle="bold" />
 
+        <!-- 4) solid instrument -->
         <LinearLayout
+            android:id="@+id/ghatambox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#D4EDDA"
             android:orientation="vertical"
-            android:padding="12dp"
-            android:background="#D4EDDA">
+            android:padding="12dp">
 
             <ImageView
-                android:id="@+id/imgSolid"
+                android:id="@+id/imgghatam"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/ghatam"/>
+                android:src="@drawable/ghatam" />
 
             <TextView
                 android:id="@+id/txtSolidDesc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ghatam: A clay pot percussion instrument, played with fingers and palms to produce sharp tones."
-                android:paddingTop="8dp"/>
+                android:paddingTop="8dp"
+                android:text="Ghatam: One of the oldest Indian instruments, it is a specially baked clay pot. The player uses their fingers, palms, and even their belly to create resonant metallic sounds. It is a staple in Malaysian Carnatic ensembles." />
 
             <Button
-                android:id="@+id/btnSolidPlay"
+                android:id="@+id/btnGhatamPlay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Play Sample"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
         </LinearLayout>
 
         <!-- bottom spacing -->
+        <LinearLayout
+            android:id="@+id/taalbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#D4EDDA"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                app:srcCompat="@drawable/khuti_taal" />
+
+            <TextView
+                android:id="@+id/textView31"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Taal : Small hand cymbals made of brass. Though simple, they are crucial for maintaining the cycle in devotional sessions and folk dances. " />
+
+            <Button
+                android:id="@+id/btnTaalPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="24dp"/>
+            android:layout_height="24dp" />
 
     </LinearLayout>
 </ScrollView>
