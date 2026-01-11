@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- PAGE TITLE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp"
+            android:text="Introduction to indian instruments"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <!-- 1) STRING -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1) String Instruments"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="10dp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#FFF3CD">
+
+            <ImageView
+                android:id="@+id/imgString"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/sitar"/>
+
+            <TextView
+                android:id="@+id/txtStringDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sitar: A plucked string instrument known for its rich resonance and used widely in Hindustani classical music."
+                android:paddingTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnStringPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Sample"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- 2) PERCUSSION -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F8F0BA"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/tambura" />
+
+            <TextView
+                android:id="@+id/anotherindianinstrument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Another indian instument desc here" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2) Percussion Instruments"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#D1ECF1">
+
+            <ImageView
+                android:id="@+id/imgPercussion"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tabla"/>
+
+            <TextView
+                android:id="@+id/txtPercussionDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tabla: A pair of hand drums that create complex rhythms in Indian classical music."
+                android:paddingTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnPercussionPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Sample"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- 3) WIND -->
+        <LinearLayout
+            android:id="@+id/mridangambox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#95E2D9"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageView21"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/mridangam" />
+
+            <TextView
+                android:id="@+id/textView27"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mridangam : a traditional indian percussion" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3) Wind Instruments"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#E2E3E5">
+
+            <ImageView
+                android:id="@+id/imgWind"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bansuri_flute"/>
+
+            <TextView
+                android:id="@+id/txtWindDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bansuri: A bamboo flute with a soft, expressive tone often used in devotional and classical music."
+                android:paddingTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnWindPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Sample"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- 4) SOLID -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4) Solid Instruments"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:background="#D4EDDA">
+
+            <ImageView
+                android:id="@+id/imgSolid"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ghatam"/>
+
+            <TextView
+                android:id="@+id/txtSolidDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ghatam: A clay pot percussion instrument, played with fingers and palms to produce sharp tones."
+                android:paddingTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnSolidPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Play Sample"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
+        <!-- bottom spacing -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="24dp"/>
+
+    </LinearLayout>
+</ScrollView>
