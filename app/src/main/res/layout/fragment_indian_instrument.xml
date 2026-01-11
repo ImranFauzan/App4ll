@@ -141,7 +141,7 @@
                 android:id="@+id/imgmridangan"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 app:srcCompat="@drawable/mridangam" />
 
             <TextView

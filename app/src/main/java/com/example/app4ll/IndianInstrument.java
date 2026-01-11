@@ -17,8 +17,6 @@ import android.widget.Button;
  */
 public class IndianInstrument extends Fragment {
 
-    Button btnSitar;
-
     MediaPlayer mp;
 
     // TODO: Rename parameter arguments, choose names that match
@@ -76,7 +74,7 @@ public class IndianInstrument extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Initialize button here after view is created
-        btnSitar = view.findViewById(R.id.btnSitarPlay);
+        Button btnSitar = view.findViewById(R.id.btnSitarPlay);
         Button btnTambura = view.findViewById(R.id.btnTamburaPlay);
         Button btnTabla = view.findViewById(R.id.btnTablaPlay);
         Button btnMridangam = view.findViewById(R.id.btnmridangamPlay);
@@ -98,6 +96,53 @@ public class IndianInstrument extends Fragment {
                 playSound(R.raw.tambura);
             }
         });
+
+        btnTabla.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.tabla);
+            }
+        });
+
+        btnMridangam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.mridangam);
+            }
+        });
+
+        btnBansuri.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.bansuri);
+            }
+        });
+
+        btnNadaswaram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.nadaswaram);
+            }
+        });
+
+        btnGhatam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.ghatam);
+            }
+        });
+
+        btnTaal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playSound(R.raw.taal);
+            }
+        });
+
+
+
+
+
     }
 
     private void playSound(int soundResourceId) {
@@ -120,7 +165,6 @@ public class IndianInstrument extends Fragment {
             });
         }
     }
-
 
 
 }
