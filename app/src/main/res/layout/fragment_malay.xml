@@ -5,8 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFC107"
-    android:textAlignment="center"
     tools:context=".MalayFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_malay"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#D0CBCB"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV_MALAY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MALAY"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#D84315"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_malay"
+        app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -16,32 +40,36 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
-
-    <TextView
-        android:id="@+id/TV_MALAY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="MALAY"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_malay"
+        app:layout_constraintVertical_bias="0.35" />
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="352dp"
-        android:layout_height="164dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
-        android:layout_marginBottom="92dp"
         android:fontFamily="serif"
         android:text="Malay refers to one of the main ethnic groups in Malaysia. Malays are known for their traditions and strong values of togetherness. They usually speak Bahasa Melayu. Family, politeness and harmony are important values in Malay society."
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_malay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_malay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F5F0F0"
+        app:itemActiveIndicatorColor="#FFF8E1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottomnavmelayu"
+        app:selectedItemId="@id/malayhome" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

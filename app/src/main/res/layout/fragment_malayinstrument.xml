@@ -8,100 +8,276 @@
     android:background="#FFC107"
     tools:context=".malayinstrument">
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="212dp"
-        android:text="MARWAS"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#D0CBCB"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="212dp"
-        android:text="REBANA"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_malay"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="284dp"
-        android:layout_marginTop="8dp"
-        android:text="KOMPANG"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center"
+                android:letterSpacing="0.05"
+                android:lineSpacingExtra="4dp"
+                android:shadowColor="#FFFFFF"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="1"
+                android:text="MALAY TRADITIONAL INSTRUMENT"
+                android:textAlignment="center"
+                android:textColor="#D84315"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <!-- Gendang -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#D0CBCBFF"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gendang"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#000000"/>
+                    <ImageButton
+                        android:id="@+id/btnGendangInfo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Info about Gendang" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/gendang"
+                    android:contentDescription="Image of Gendang" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="A traditional Malay drum used to create rhythm in music and dance performances. It is commonly played during cultural ceremonies."
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnGendangPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Play Sample" />
+            </LinearLayout>
+
+            <!-- Kompang -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#D0CBCBFF"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Kompang"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#000000"/>
+                    <ImageButton
+                        android:id="@+id/btnKompangInfo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Info about Kompang" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/kompang"
+                    android:contentDescription="Image of Kompang" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="A traditional Malay hand drum played by beating it with the palm. It is commonly used during weddings and parades."
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnKompangPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Play Sample" />
+            </LinearLayout>
+
+            <!-- Rebana -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="#D0CBCBFF"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Rebana"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#000000"/>
+                    <ImageButton
+                        android:id="@+id/btnRebanaInfo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Info about Rebana" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/rebana"
+                    android:contentDescription="Image of Rebana" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="Traditional Malay frame drum played by hand. It is often used in group performances during religious events."
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnRebanaPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Play Sample" />
+            </LinearLayout>
+
+            <!-- Marwas -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="#D0CBCBFF"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Marwas"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
+                        android:textColor="#000000"/>
+                    <ImageButton
+                        android:id="@+id/btnMarwasInfo"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@android:drawable/ic_dialog_info"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="Info about Marwas" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/marwas"
+                    android:contentDescription="Image of Marwas" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="8dp"
+                    android:text="A small traditional Malay hand drum. It is commonly used in Zapin music to create fast and rhythmic beats."
+                    android:textColor="#000000" />
+
+                <Button
+                    android:id="@+id/btnMarwasPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Play Sample" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_malay"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="196dp"
-        android:fontFamily="serif"
-        android:text="MALAY TRADITIONAL INSTRUMENT"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        android:textStyle="bold"
+        android:background="#D0CBCB"
+        app:itemActiveIndicatorColor="#FFF8E1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:menu="@menu/bottomnavmelayu"
+        app:selectedItemId="@id/malayinstrument" />
 
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="348dp"
-        android:src="@drawable/gendang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="68dp"
-        android:layout_marginTop="8dp"
-        android:text="GENDANG"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginBottom="348dp"
-        android:src="@drawable/kompang"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView16" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="144dp"
-        android:src="@drawable/rebana"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/marwas"
-        app:layout_constraintStart_toEndOf="@+id/imageView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
 </androidx.constraintlayout.widget.ConstraintLayout>
