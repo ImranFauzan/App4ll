@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
-            if (itemId == R.id.nav_home) {
+            if (itemId == R.id.nav_mainPage) {
                 selectedFragment = new HomeFragment();
             } else if (itemId == R.id.nav_quiz) {
                 selectedFragment = new QuizFragment();
@@ -57,14 +57,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
-            navigationView.setCheckedItem(R.id.nav_home);
+            navigationView.setCheckedItem(R.id.nav_mainPage);
         }
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
-        if (itemId == R.id.nav_home) {
+        if (itemId == R.id.nav_mainPage) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new HomeFragment()).commit();
         } else if (itemId == R.id.nav_quiz) {
