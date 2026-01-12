@@ -65,11 +65,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#F5F0F0"
-        app:itemActiveIndicatorColor="#FFF8E1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottomnavmelayu"
-        app:selectedItemId="@id/malayhome" />
+        app:menu="@menu/bottomnavmelayu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

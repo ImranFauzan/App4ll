@@ -476,7 +476,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:selectedItemId="@id/malayfood"
         app:menu="@menu/bottomnavmelayu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
