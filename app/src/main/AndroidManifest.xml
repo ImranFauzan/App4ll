@@ -29,6 +29,15 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+        <activity
+            android:name=".ChineseActivity"
+            android:exported="false" />
+        <!--<activity
+            android:name=".MalayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IndianActivity"
+            android:exported="false" />-->
     </application>
 
 </manifest>
