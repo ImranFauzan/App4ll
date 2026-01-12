@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App4ll">
         <activity
+            android:name=".IndianActivity"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
@@ -35,9 +38,6 @@
         <activity
             android:name=".melayu"
             android:exported="false" />
-<!--        <activity
-            android:name=".IndianActivity"
-            android:exported="false" />-->
     </application>
 
 </manifest>
