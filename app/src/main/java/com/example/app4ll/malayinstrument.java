@@ -1,64 +1,160 @@
 package com.example.app4ll;
 
+import android.app.AlertDialog;
+import android.media.MediaPlayer;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link malayinstrument#newInstance} factory method to
- * create an instance of this fragment.
- */
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class malayinstrument extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private MediaPlayer mediaPlayer;
 
     public malayinstrument() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment malayinstrument.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static malayinstrument newInstance(String param1, String param2) {
-        malayinstrument fragment = new malayinstrument();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_malayinstrument, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        // 1. Bottom Navigation Logic
+        BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_malay);
+        if (bottomNav != null) {
+            bottomNav.setSelectedItemId(R.id.malayinstrument);
+            bottomNav.setOnItemSelectedListener(item -> {
+                int itemId = item.getItemId();
+                if (itemId == R.id.malayfood) {
+                    replaceFragment(new malay_food());
+                    return true;
+                } else if (itemId == R.id.malayinstrument) {
+                    return true;
+                } else if (itemId == R.id.malayhome) {
+                    if (getActivity() != null) {
+                        getActivity().onBackPressed();
+                    }
+                    return true;
+                }
+                return false;
+            });
+        }
+
+        // 2. Info Buttons Logic
+        setupInfoButtons(view);
+
+        // 3. Play Sample Buttons Logic
+        setupPlayButtons(view);
+    }
+
+    private void setupInfoButtons(View view) {
+        ImageButton btnGendangInfo = view.findViewById(R.id.btnGendangInfo);
+        ImageButton btnKompangInfo = view.findViewById(R.id.btnKompangInfo);
+        ImageButton btnRebanaInfo = view.findViewById(R.id.btnRebanaInfo);
+        ImageButton btnMarwasInfo = view.findViewById(R.id.btnMarwasInfo);
+
+        if (btnGendangInfo != null) {
+            btnGendangInfo.setOnClickListener(v -> showInfoDialog("Gendang Materials", 
+                "Wood for the drum body, animal skin such as goat skin for the drum head and rattan to tighten and hold the skin"));
+        }
+
+        if (btnKompangInfo != null) {
+            btnKompangInfo.setOnClickListener(v -> showInfoDialog("Kompang Materials", 
+                "Wood for the circular frame, animal skin commonly goat skin for the drum surface and metal nails to secure the skin to the frame."));
+        }
+
+        if (btnRebanaInfo != null) {
+            btnRebanaInfo.setOnClickListener(v -> showInfoDialog("Rebana Materials", 
+                "Typically made from hardwood like jackfruit or meranti wood, with a surface made of goat skin tightened using a rattan ring."));
+        }
+
+        if (btnMarwasInfo != null) {
+            btnMarwasInfo.setOnClickListener(v -> showInfoDialog("Marwas Materials", 
+                "A small double-sided drum made from wood and animal skin, traditionally goat or camel skin, laced with thick string."));
+        }
+    }
+
+    private void setupPlayButtons(View view) {
+        Button btnGendangPlay = view.findViewById(R.id.btnGendangPlay);
+        Button btnKompangPlay = view.findViewById(R.id.btnKompangPlay);
+        Button btnRebanaPlay = view.findViewById(R.id.btnRebanaPlay);
+        Button btnMarwasPlay = view.findViewById(R.id.btnMarwasPlay);
+
+        if (btnGendangPlay != null) {
+            btnGendangPlay.setOnClickListener(v -> playSound(R.raw.gendang));
+        }
+
+        if (btnKompangPlay != null) {
+            btnKompangPlay.setOnClickListener(v -> playSound(R.raw.kompang));
+        }
+
+        if (btnRebanaPlay != null) {
+            btnRebanaPlay.setOnClickListener(v -> playSound(R.raw.rebana));
+        }
+
+        if (btnMarwasPlay != null) {
+            btnMarwasPlay.setOnClickListener(v -> playSound(R.raw.marwas));
+        }
+    }
+
+    private void playSound(int rawResourceId) {
+        // Stop and release any existing media player
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+            mediaPlayer.release();
+        }
+
+        try {
+            mediaPlayer = MediaPlayer.create(getContext(), rawResourceId);
+            if (mediaPlayer != null) {
+                mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(MediaPlayer::release);
+            } else {
+                Toast.makeText(getContext(), "Sound file not found!", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getContext(), "Error playing sound", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void showInfoDialog(String title, String message) {
+        new AlertDialog.Builder(getContext())
+                .setTitle(title)
+                .setMessage(message)
+                .setPositiveButton("OK", null)
+                .show();
+    }
+
+    private void replaceFragment(Fragment fragment) {
+        if (getActivity() == null) return;
+        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
+        transaction.replace(R.id.frameLayout, fragment); 
+        transaction.addToBackStack(null);
+        transaction.commit();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
