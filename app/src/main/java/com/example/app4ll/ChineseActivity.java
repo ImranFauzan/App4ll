@@ -39,7 +39,7 @@ public class ChineseActivity extends AppCompatActivity {
 
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
-            bottomNav.setSelectedItemId(R.id.DestHome);
+            bottomNav.setSelectedItemId(R.id.DestHomeChinese);
         }
     }
 
