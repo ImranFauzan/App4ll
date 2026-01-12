@@ -13,9 +13,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class malayinstrument extends Fragment {
 
@@ -35,31 +32,10 @@ public class malayinstrument extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Bottom Navigation Logic
-        BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_malay);
-        if (bottomNav != null) {
-            bottomNav.setSelectedItemId(R.id.malayinstrument);
-            bottomNav.setOnItemSelectedListener(item -> {
-                int itemId = item.getItemId();
-                if (itemId == R.id.malayfood) {
-                    replaceFragment(new malay_food());
-                    return true;
-                } else if (itemId == R.id.malayinstrument) {
-                    return true;
-                } else if (itemId == R.id.malayhome) {
-                    if (getActivity() != null) {
-                        getActivity().onBackPressed();
-                    }
-                    return true;
-                }
-                return false;
-            });
-        }
-
-        // 2. Info Buttons Logic
+        // 1. Info Buttons Logic
         setupInfoButtons(view);
 
-        // 3. Play Sample Buttons Logic
+        // 2. Play Sample Buttons Logic
         setupPlayButtons(view);
     }
 
@@ -114,7 +90,6 @@ public class malayinstrument extends Fragment {
     }
 
     private void playSound(int rawResourceId) {
-        // Stop and release any existing media player
         if (mediaPlayer != null) {
             mediaPlayer.stop();
             mediaPlayer.release();
@@ -125,8 +100,6 @@ public class malayinstrument extends Fragment {
             if (mediaPlayer != null) {
                 mediaPlayer.start();
                 mediaPlayer.setOnCompletionListener(MediaPlayer::release);
-            } else {
-                Toast.makeText(getContext(), "Sound file not found!", Toast.LENGTH_SHORT).show();
             }
         } catch (Exception e) {
             Toast.makeText(getContext(), "Error playing sound", Toast.LENGTH_SHORT).show();
@@ -139,14 +112,6 @@ public class malayinstrument extends Fragment {
                 .setMessage(message)
                 .setPositiveButton("OK", null)
                 .show();
-    }
-
-    private void replaceFragment(Fragment fragment) {
-        if (getActivity() == null) return;
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, fragment); 
-        transaction.addToBackStack(null);
-        transaction.commit();
     }
 
     @Override

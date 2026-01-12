@@ -1,481 +1,381 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFC107"
-    tools:context=".malay_food">
+    android:background="#FFC107">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_malay_food"
+    <LinearLayout
+        android:id="@+id/DestMalayFood"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#D0CBCB"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <ScrollView
-        android:id="@+id/scrollViewMalayFood"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_malay"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_malay_food">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:lineSpacingExtra="4dp"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1"
+            android:text="MUST TRY \nMALAY CUISINE !"
+            android:textColor="#D84315"
+            android:textSize="32sp" />
 
         <LinearLayout
+            android:id="@+id/layoutFavoritesSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:letterSpacing="0.05"
-                android:lineSpacingExtra="4dp"
-                android:shadowColor="#FFFFFF"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="1"
-                android:text="MUST TRY \nMALAY CUISINE !"
-                android:textColor="#D84315"
-                android:textSize="32sp" />
-
-            <LinearLayout
-                android:id="@+id/layoutFavoritesSection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingBottom="20dp"
-                android:visibility="gone">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="❤️ My Favorites"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:textColor="#D84315"
-                    android:layout_marginBottom="10dp"/>
-
-                <!-- Nasi Lemak Fav Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardNasiLemakFav"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="#FFF8E1"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/nasilemak"
-                            android:scaleType="centerCrop"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="12dp"
-                            android:text="Nasi Lemak"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Nasi Kerabu Fav Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardNasiKerabuFav"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="#FFF8E1"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/nasikerabu"
-                            android:scaleType="centerCrop"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="12dp"
-                            android:text="Nasi Kerabu"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <!-- Satay Fav Card -->
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/cardSatayFav"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    app:cardCornerRadius="8dp"
-                    app:cardElevation="4dp"
-                    app:cardBackgroundColor="#FFF8E1"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="10dp">
-
-                        <ImageView
-                            android:layout_width="60dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/satay"
-                            android:scaleType="centerCrop"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="12dp"
-                            android:text="Satay"
-                            android:textSize="16sp"
-                            android:textStyle="bold"/>
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgNasiLemak"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/nasilemak" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingStart="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical">
-
-                            <TextView
-                                android:id="@+id/txtNasiLemak"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Nasi Lemak"
-                                android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <CheckBox
-                                android:id="@+id/btnFavNasiLemak"
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:background="@drawable/selector_favorite"
-                                android:button="@null"
-                                android:checked="false" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/txtNasiLemakDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Malaysia's national dish, featuring fragrant rice steamed in coconut milk and pandan leaves."
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgNasiKerabu"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/nasikerabu" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingStart="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical">
-
-                            <TextView
-                                android:id="@+id/txtNasiKerabu"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Nasi Kerabu"
-                                android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <CheckBox
-                                android:id="@+id/btnFavNasiKerabu"
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:background="@drawable/selector_favorite"
-                                android:button="@null"
-                                android:checked="false" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/txtNasiKerabuDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Vibrant dish featuring blue-tinted rice served with vegetables, salted egg, fish crackers and side of grilled meat."
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="12dp">
-
-                    <ImageView
-                        android:id="@+id/imgSatay"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/satay" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:orientation="vertical"
-                        android:paddingStart="12dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical">
-
-                            <TextView
-                                android:id="@+id/txtSatay"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Satay"
-                                android:textColor="#000000"
-                                android:textSize="18sp"
-                                android:textStyle="bold" />
-
-                            <CheckBox
-                                android:id="@+id/btnFavSatay"
-                                android:layout_width="48dp"
-                                android:layout_height="48dp"
-                                android:background="@drawable/selector_favorite"
-                                android:button="@null"
-                                android:checked="false" />
-                        </LinearLayout>
-
-                        <TextView
-                            android:id="@+id/txtSatayDesc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="6dp"
-                            android:text="Beloved street-food featuring seasoned meat skewers grilled over an open charcoal flame for a smoky finish. Marinated in blended turmeric, lemongrass and cumin."
-                            android:textColor="#555555"
-                            android:textSize="14sp" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            android:paddingBottom="20dp"
+            android:visibility="gone">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                android:text="Suggested Restaurants"
-                android:textColor="#000000"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="❤️ My Favorites"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="#D84315"
+                android:layout_marginBottom="10dp"/>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardNasiLemakFav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="6dp">
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#FFF8E1">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp">
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/nasilemak"
+                        android:scaleType="centerCrop"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nasi Lemak Burung Hantu"
-                        android:textColor="#000000"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="12dp"
+                        android:text="NasiLemak"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="No. 1 - G, Wisma CKL, Jalan 22a/70a, Desa Sri Hartamas, 50480 Kuala Lumpur, Federal Territory of Kuala Lumpur"
-                        android:textColor="#555555"
-                        android:textSize="14sp" />
-
-                    <Button
-                        android:id="@+id/btnDiscoverBurungHantu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:backgroundTint="#FF9800"
-                        android:text="Discover Now"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Stesen Nasi Kerabu"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:text="2, Jalan Camar 4/2, Kota Damansara, 47810 Petaling Jaya, Selangor"
-                        android:textColor="#555555"
-                        android:textSize="14sp" />
-
-                    <Button
-                        android:id="@+id/btnDiscoverStesen"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:layout_marginBottom="12dp"
-                        android:backgroundTint="#FF9800"
-                        android:text="Discover Now"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15sp" />
-
-                    <TextView
-                        android:id="@+id/sataylocation"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Satay Zainah Ismail"
-                        android:textColor="#000000"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/satayadd"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="4dp"
-                        android:text="1077, Lorong Kiri 20, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
-                        android:textColor="#555555"
-                        android:textSize="14sp" />
-
-                    <Button
-                        android:id="@+id/btnDiscoverSatay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="48dp"
-                        android:backgroundTint="#FF9800"
-                        android:text="Discover Now"
-                        android:textColor="#FFFFFF"
-                        android:textSize="15sp" />
-
+                        android:textStyle="bold"/>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </LinearLayout>
-    </ScrollView>
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_malay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F5F0F0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottomnavmelayu" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imgNasiLemak"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/nasilemak" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txtNasiLemakName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nasi Lemak"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/btnFavNasiLemak"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/selector_favorite"
+                            android:button="@null"
+                            android:checked="false" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtNasiLemakDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Malaysia's national dish, featuring fragrant rice steamed in coconut milk and pandan leaves."
+                        android:textColor="#555555"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgNasiKerabu"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/nasikerabu" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txtNasiKerabuName"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Nasi Kerabu"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/btnFavNasiKerabu"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/selector_favorite"
+                            android:button="@null"
+                            android:checked="false" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtNasiKerabuDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Vibrant dish featuring blue-tinted rice served with vegetables, salted egg, fish crackers and side of grilled meat."
+                        android:textColor="#555555"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgSatay"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/satay" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/txtSatay"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Satay"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/btnFavSatay"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:background="@drawable/selector_favorite"
+                            android:button="@null"
+                            android:checked="false" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/txtSatayDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Beloved street-food featuring seasoned meat skewers grilled over an open charcoal flame for a smoky finish. Marinated in blended turmeric, lemongrass and cumin."
+                        android:textColor="#555555"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Suggested Restaurants"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <TextView
+                    android:id="@+id/txtBurungHantuName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nasi Lemak Burung Hantu"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtBurungHantuAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="No. 1 - G, Wisma CKL, Jalan 22a/70a, Desa Sri Hartamas, 50480 Kuala Lumpur, Federal Territory of Kuala Lumpur"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnDiscoverBurungHantu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginBottom="12dp"
+                    android:backgroundTint="#FF9800"
+                    android:text="Discover Now"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/txtStesenName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Stesen Nasi Kerabu"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtStesenAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="2, Jalan Camar 4/2, Kota Damansara, 47810 Petaling Jaya, Selangor"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnDiscoverStesen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#FF9800"
+                    android:text="Discover Now"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/txtSatayLoc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Satay Zainah Ismail"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txtSatayAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="1077, Lorong Kiri 20, Kampung Datuk Keramat, 54000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur"
+                    android:textColor="#555555"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnDiscoverSatay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:backgroundTint="#FF9800"
+                    android:text="Discover Now"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

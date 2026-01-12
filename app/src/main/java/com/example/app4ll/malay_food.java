@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
-import android.widget.Toast;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class malay_food extends Fragment {
 
@@ -39,27 +35,6 @@ public class malay_food extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        // 1. Bottom Navigation Logic
-        BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_malay);
-
-        bottomNav.setSelectedItemId(R.id.malayfood);
-
-        bottomNav.setOnItemSelectedListener(item -> {
-                int itemId = item.getItemId();
-                if (itemId == R.id.malayfood) {
-                    return true;
-                } else if (itemId == R.id.malayinstrument) {
-                    replaceFragment(new malayinstrument());
-                    return true;
-                } else if (itemId == R.id.malayhome) {
-                    if (getActivity() != null) {
-                        getActivity().onBackPressed();
-                    }
-                    return true;
-                }
-                return false;
-            });
 
         // Discover Buttons
         Button btnNasiLemak = view.findViewById(R.id.btnDiscoverBurungHantu);
@@ -93,8 +68,6 @@ public class malay_food extends Fragment {
         // Favorites Section
         layoutFavoritesSection = view.findViewById(R.id.layoutFavoritesSection);
         cardNasiLemakFav = view.findViewById(R.id.cardNasiLemakFav);
-        cardNasiKerabuFav = view.findViewById(R.id.cardNasiKerabuFav);
-        cardSatayFav = view.findViewById(R.id.cardSatayFav);
 
         CheckBox btnFavNasiLemak = view.findViewById(R.id.btnFavNasiLemak);
         CheckBox btnFavNasiKerabu = view.findViewById(R.id.btnFavNasiKerabu);
@@ -102,23 +75,15 @@ public class malay_food extends Fragment {
 
         Context context = view.getContext();
         if (context != null) {
-            setupFavoriteLogic(context, btnFavNasiLemak, cardNasiLemakFav, "fav_nasilemak", "Nasi Lemak");
-            setupFavoriteLogic(context, btnFavNasiKerabu, cardNasiKerabuFav, "fav_nasikerabu", "Nasi Kerabu");
-            setupFavoriteLogic(context, btnFavSatay, cardSatayFav, "fav_satay", "Satay");
+            setupFavoriteLogic(context, btnFavNasiLemak, cardNasiLemakFav, "fav_nasilemak");
+            setupFavoriteLogic(context, btnFavNasiKerabu, cardNasiKerabuFav, "fav_nasikerabu");
+            setupFavoriteLogic(context, btnFavSatay, cardSatayFav, "fav_satay");
         }
 
         updateSectionVisibility();
     }
 
-    private void replaceFragment(Fragment fragment) {
-        if (getActivity() == null) return;
-        FragmentTransaction transaction = getParentFragmentManager().beginTransaction();
-        transaction.replace(R.id.frameLayout, fragment); 
-        transaction.addToBackStack(null);
-        transaction.commit();
-    }
-
-    private void setupFavoriteLogic(Context context, CheckBox heartButton, final CardView hiddenCard, final String key, final String foodName) {
+    private void setupFavoriteLogic(Context context, CheckBox heartButton, final CardView hiddenCard, final String key) {
         if (heartButton == null || hiddenCard == null) return;
         SharedPreferences settings = context.getSharedPreferences(PREFS_NAME, 0);
         boolean isFavorite = settings.getBoolean(key, false);

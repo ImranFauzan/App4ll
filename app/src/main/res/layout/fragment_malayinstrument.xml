@@ -1,106 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFC107"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FF9800"
     tools:context=".malayinstrument">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#D0CBCB"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_malay"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2">
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:lineSpacingExtra="4dp"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1"
+            android:text="MALAY TRADITIONAL INSTRUMENT"
+            android:textAlignment="center"
+            android:textColor="#D84315"
+            android:textSize="32sp"
+            android:textStyle="bold" />
 
+        <!-- Gendang -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#D0CBCBFF"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="12dp">
 
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-black"
-                android:gravity="center"
-                android:letterSpacing="0.05"
-                android:lineSpacingExtra="4dp"
-                android:shadowColor="#FFFFFF"
-                android:shadowDx="4"
-                android:shadowDy="4"
-                android:shadowRadius="1"
-                android:text="MALAY TRADITIONAL INSTRUMENT"
-                android:textAlignment="center"
-                android:textColor="#D84315"
-                android:textSize="32sp"
-                android:textStyle="bold" />
-
-            <!-- Gendang -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:background="#D0CBCBFF"
-                android:orientation="vertical"
-                android:padding="12dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
-                    <TextView
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Gendang"
-                        android:textStyle="bold"
-                        android:textSize="18sp"
-                        android:textColor="#000000"/>
-                    <ImageButton
-                        android:id="@+id/btnGendangInfo"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_dialog_info"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="Info about Gendang" />
+                    android:layout_weight="1"
+                    android:text="Gendang"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:textColor="#000000"/>
+                <ImageButton
+                    android:id="@+id/btnGendangInfo"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@android:drawable/ic_dialog_info"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Info about Gendang" />
                 </LinearLayout>
 
-                <ImageView
-                    android:id="@+id/imageView16"
-                    android:layout_width="match_parent"
-                    android:layout_height="180dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/gendang"
-                    android:contentDescription="Image of Gendang" />
+            <ImageView
+                android:id="@+id/imageView16"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/gendang"
+                android:contentDescription="Image of Gendang" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="8dp"
-                    android:text="A traditional Malay drum used to create rhythm in music and dance performances. It is commonly played during cultural ceremonies."
-                    android:textColor="#000000" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="8dp"
+                android:text="A traditional Malay drum used to create rhythm in music and dance performances. It is commonly played during cultural ceremonies."
+                android:textColor="#000000" />
 
-                <Button
-                    android:id="@+id/btnGendangPlay"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="Play Sample" />
+            <Button
+                android:id="@+id/btnGendangPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Play Sample" />
             </LinearLayout>
 
             <!-- Kompang -->
@@ -266,16 +249,5 @@
                     android:text="Play Sample" />
             </LinearLayout>
 
-        </LinearLayout>
-    </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation_malay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#D0CBCB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottomnavmelayu" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>
