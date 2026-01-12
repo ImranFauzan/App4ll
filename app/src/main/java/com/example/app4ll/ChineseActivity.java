@@ -31,17 +31,20 @@ public class ChineseActivity extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
-                        selectedFragment).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container_chinese, selectedFragment)
+                        .commit();
             }
             return true;
         });
 
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
-            bottomNav.setSelectedItemId(R.id.DestHomeChinese);
-        }
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container_chinese, new ChineseFragment())
+                    .commit();
+            bottomNav.setSelectedItemId(R.id.ChineseHome);
     }
 
     // Removed the incorrect private inner class definition
-}
+}}

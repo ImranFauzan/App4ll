@@ -336,7 +336,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/btnDiscoverPelita"
+                    android:id="@+id/btnDiscoverNA"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:backgroundTint="#FF9800"
