@@ -18,7 +18,6 @@ public class melayu extends AppCompatActivity {
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_malay);
 
-
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
@@ -31,17 +30,19 @@ public class melayu extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
-                        selectedFragment).commit();
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container_malay, selectedFragment)
+                        .commit();
             }
             return true;
         });
 
-
+        // Load default fragment
         if (savedInstanceState == null) {
-            bottomNav.setSelectedItemId(R.id.DestHomeMalay);
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container_malay, new MalayFragment())
+                    .commit();
+            bottomNav.setSelectedItemId(R.id.malayhome);
         }
     }
-
-    // Removed the incorrect private inner class definition
 }
