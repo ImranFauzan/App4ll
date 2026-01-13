@@ -25,10 +25,10 @@
 
     <TextView
         android:id="@+id/AboutAppDesc"
-        android:layout_width="358dp"
-        android:layout_height="92dp"
+        android:layout_width="355dp"
+        android:layout_height="149dp"
         android:text="This app aims to help Malaysians better understand and appreciate the diverse cultures that make up our nation."
-        android:textSize="20sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
