@@ -1,5 +1,6 @@
 package com.example.app4ll;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -24,7 +25,7 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawerLayout = findViewById(R.id.drawer_layout_indian);
+        drawerLayout = findViewById(R.id.drawer_layout_india);
         NavigationView navigationView = findViewById(R.id.nav_view_indian);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -33,9 +34,9 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_indian);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_india);
 
-        // Set listener for the Indian navigation
+        // Set listener for the Chinese navigation
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
@@ -55,10 +56,10 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
             return true;
         });
 
-        // Load IndianFragment by default on startup
+        // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_indian, new IndianFragment())
+                    .replace(R.id.fragment_container_indian, new ChineseFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.indianhome);
         }

@@ -38,6 +38,7 @@
         <activity
             android:name=".melayu"
             android:exported="false" />
+
     </application>
 
 </manifest>
