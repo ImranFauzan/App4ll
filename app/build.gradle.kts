@@ -43,7 +43,12 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation(libs.firebase.database)
     implementation(libs.cardview)
+    implementation(libs.fragment)
+    implementation(libs.credentials)
+    implementation(libs.credentials.play.services.auth)
+    implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
 }

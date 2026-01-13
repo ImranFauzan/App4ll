@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 
 public class HomeFragment extends Fragment {
 
-    private ImageButton btnChinese,btnMalay;
+    private ImageButton btnChinese,btnMalay,btnIndian;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -39,6 +39,16 @@ public class HomeFragment extends Fragment {
         btnChinese = view.findViewById(R.id.BtnChinese);
 
         btnChinese.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ChineseActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btnIndian = view.findViewById(R.id.BtnIndian);
+
+        btnIndian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ChineseActivity.class);
