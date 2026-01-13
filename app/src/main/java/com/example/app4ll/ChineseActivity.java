@@ -88,12 +88,12 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
         return true;
     }
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 }
