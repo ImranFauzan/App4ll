@@ -51,7 +51,7 @@ public class HomeFragment extends Fragment {
         btnIndian.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ChineseActivity.class);
+                Intent intent = new Intent(getActivity(), IndianActivity.class);
                 startActivity(intent);
             }
         });

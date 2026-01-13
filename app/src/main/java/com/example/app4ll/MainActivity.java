@@ -2,8 +2,6 @@ package com.example.app4ll;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -51,14 +49,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
             if (selectedFragment != null) {
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_indian,
                         selectedFragment).commit();
             }
             return true;
         });
 
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_indian,
                     new HomeFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_mainPage);
         }
@@ -68,13 +66,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.nav_mainPage) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_indian,
                     new HomeFragment()).commit();
         } else if (itemId == R.id.nav_quiz) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_indian,
                     new QuizFragment()).commit();
         } else if (itemId == R.id.nav_about) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_chinese,
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_indian,
                     new AboutAppFragment()).commit();
         }
 

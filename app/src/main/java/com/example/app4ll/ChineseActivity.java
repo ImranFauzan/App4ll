@@ -1,6 +1,5 @@
 package com.example.app4ll;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
@@ -50,7 +49,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
 
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container_chinese, selectedFragment)
+                        .replace(R.id.fragment_container_indian, selectedFragment)
                         .commit();
             }
             return true;
@@ -59,7 +58,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_chinese, new ChineseFragment())
+                    .replace(R.id.fragment_container_indian, new ChineseFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.ChineseHome);
         }
@@ -81,7 +80,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
 
         if (selectedFragment != null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_chinese, selectedFragment)
+                    .replace(R.id.fragment_container_indian, selectedFragment)
                     .commit();
         }
 
