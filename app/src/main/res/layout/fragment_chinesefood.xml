@@ -47,7 +47,7 @@
                 android:textStyle="bold" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardThosaiFav"
+                android:id="@+id/cardMeeTarikFav"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="#FFF8E1"
@@ -186,7 +186,7 @@
                             android:textStyle="bold" />
 
                         <CheckBox
-                            android:id="@+id/btnFavRoti"
+                            android:id="@+id/btnFavNA"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:background="@drawable/selector_favorite"
@@ -195,7 +195,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtRotiCanaiDesc"
+                        android:id="@+id/txtNasiAyamDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -250,7 +250,7 @@
                             android:textStyle="bold" />
 
                         <CheckBox
-                            android:id="@+id/btnFavBeriyani"
+                            android:id="@+id/btnFavDimsum"
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:background="@drawable/selector_favorite"
@@ -259,7 +259,7 @@
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/txtBeriyaniDesc"
+                        android:id="@+id/txtDimsumDesc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
@@ -310,7 +310,7 @@
                     android:textSize="14sp" />
 
                 <Button
-                    android:id="@+id/btnFavMeetarik"
+                    android:id="@+id/btnDiscoverMee"
                     android:layout_width="wrap_content"
                     android:layout_height="35dp"
                     android:layout_marginBottom="12dp"
