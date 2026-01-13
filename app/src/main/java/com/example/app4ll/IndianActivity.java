@@ -26,7 +26,7 @@ public class IndianActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_indian);
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_india);
 
         // Set listener for the Chinese navigation
         bottomNav.setOnItemSelectedListener(item -> {
@@ -36,8 +36,8 @@ public class IndianActivity extends AppCompatActivity {
                 selectedFragment = new IndianInstrument();
             } else if (itemId == R.id.indianfood) { // Corrected the menu item ID from DestChinaFood
                 selectedFragment = new IndianFood();
-            } else if (itemId == R.id.IndianHome) {
-                selectedFragment = new IndianFragment();
+            } else if (itemId == R.id.indianhome) {
+                //selectedFragment = new IndianFragment();
             }
 
             if (selectedFragment != null) {
@@ -50,10 +50,10 @@ public class IndianActivity extends AppCompatActivity {
 
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
+            /*getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_indian, new IndianFragment())
                     .commit();
-            bottomNav.setSelectedItemId(R.id.IndianHome);
+            bottomNav.setSelectedItemId(R.id.indianhome);*/
         }
 
         // Removed the incorrect private inner class definition
