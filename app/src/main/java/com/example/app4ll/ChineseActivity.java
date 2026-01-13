@@ -49,7 +49,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
 
             if (selectedFragment != null) {
                 getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container_indian, selectedFragment)
+                        .replace(R.id.fragment_container_chinese, selectedFragment)
                         .commit();
             }
             return true;
@@ -58,7 +58,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_indian, new ChineseFragment())
+                    .replace(R.id.fragment_container_chinese, new ChineseFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.ChineseHome);
         }
@@ -80,7 +80,7 @@ public class ChineseActivity extends AppCompatActivity implements NavigationView
 
         if (selectedFragment != null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_indian, selectedFragment)
+                    .replace(R.id.fragment_container_chinese, selectedFragment)
                     .commit();
         }
 

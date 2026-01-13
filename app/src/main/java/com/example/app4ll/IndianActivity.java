@@ -36,7 +36,7 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_india);
 
-        // Set listener for the Chinese navigation
+        // Set listener for the Indian navigation
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
@@ -56,7 +56,7 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
             return true;
         });
 
-        // Load ChineseFragment by default on startup
+        // Load IndianFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_indian, new ChineseFragment())
