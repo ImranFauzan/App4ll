@@ -59,7 +59,7 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
         // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_indian, new ChineseFragment())
+                    .replace(R.id.fragment_container_indian, new IndianFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.indianhome);
         }
@@ -89,12 +89,12 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
         return true;
     }
 
-    @Override
+/*    @Override
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 }
