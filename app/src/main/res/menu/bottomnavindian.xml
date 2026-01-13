@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
-
-    <item android:title="Home"
+    <item
+        android:id="@+id/indianhome"
         android:icon="@drawable/home"
-        android:id="@+id/IndianHome"/>
+        android:title="Home" />
 
-    <item android:title="Food"
+    <item
+        android:id="@+id/indianfood"
         android:icon="@drawable/foodlogo"
-        android:id="@+id/IndianFood"/>
+        android:title="Food" />
 
-    <item android:title="Instrument"
+    <item
+        android:id="@+id/indianinstrument"
         android:icon="@drawable/musiclogo"
-        android:id="@+id/IndianInstrument"/>
-
+        android:title="Instrument" />
 </menu>
