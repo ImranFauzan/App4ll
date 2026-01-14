@@ -105,6 +105,55 @@ public class IndianInstrument extends Fragment {
         setupToggleButton(btnNadaswaram, Nadaswaram);
         setupToggleButton(btnGhatam, Ghatam);
         setupToggleButton(btnTaal, Taal);
+
+        ImageButton infoSitar = view.findViewById(R.id.btnSitarInfo);
+        ImageButton infoTambura = view.findViewById(R.id.btnTamburaInfo);
+        ImageButton infoTabla = view.findViewById(R.id.btnTablaInfo);
+        ImageButton infoMridangam = view.findViewById(R.id.btnMridangamInfo);
+        ImageButton infoBansuri = view.findViewById(R.id.btnbansuriInfo);
+        ImageButton infoNadaswaram = view.findViewById(R.id.btnNadaswaramInfo);
+        ImageButton infoGhatam = view.findViewById(R.id.btnghatamInfo);
+        ImageButton infoTaal = view.findViewById(R.id.btntaalInfo);
+
+        infoSitar.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Sitar body is made from Tun wood. It strings is made from metal strings.",
+                        Toast.LENGTH_LONG).show());
+
+        infoTambura.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Tambura is made from jakewood or teak.",
+                        Toast.LENGTH_LONG).show());
+
+        infoTabla.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Tabla: Dayan is carved from heave rosewood while Vayan is typically made out of metal",
+                        Toast.LENGTH_LONG).show());
+
+        infoMridangam.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Mridangam body is a hollowed-out block of Jackfruit wood. The two heads are layers of goat and cow skin, held together by buffalo-hide leather straps.",
+                        Toast.LENGTH_LONG).show());
+
+        infoBansuri.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Bansuri is Traditionally made from a single length of special straight-growth bamboo.",
+                        Toast.LENGTH_LONG).show());
+
+        infoNadaswaram.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Nadaswaram body is made of Ebony or other dark hardwoods to withstand high pressure.",
+                        Toast.LENGTH_LONG).show());
+
+        infoGhatam.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Ghatam is made from clay mixed with iron, copper, and brass filings. This metallic mixture gives it its sharp, bell-like \"ringing\" tone..",
+                        Toast.LENGTH_LONG).show());
+
+        infoTaal.setOnClickListener(v ->
+                Toast.makeText(getContext(),
+                        "Taal is Small hand cymbals made of bell metal, which is a specific alloy of bronze, brass, or copper.",
+                        Toast.LENGTH_LONG).show());
     }
 
     private void setupToggleButton(Button button, MediaPlayer player) {
@@ -136,6 +185,4 @@ public class IndianInstrument extends Fragment {
             mp = null;
         }
     }
-
-
 }
