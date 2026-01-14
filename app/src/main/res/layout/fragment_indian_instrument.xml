@@ -15,9 +15,19 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="12dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:letterSpacing="0.05"
+            android:lineSpacingExtra="4dp"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="4"
+            android:shadowDy="4"
+            android:shadowRadius="1"
             android:text="Introduction to indian instruments"
-            android:textSize="22sp"
+            android:textAlignment="center"
+            android:textColor="#D84315"
+            android:textSize="32sp"
             android:textStyle="bold" />
 
         <!-- 1) STRING -->
@@ -26,7 +36,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
             android:paddingBottom="6dp"
-            android:text="1) String Instruments"
+            android:text="String Instruments"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -95,7 +105,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
             android:paddingBottom="6dp"
-            android:text="2) Percussion Instruments"
+            android:text="Percussion Instruments"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -164,7 +174,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
             android:paddingBottom="6dp"
-            android:text="3) Wind Instruments"
+            android:text="Wind Instruments"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -231,7 +241,7 @@
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
             android:paddingBottom="6dp"
-            android:text="4) Solid Instruments"
+            android:text="Solid Instruments"
             android:textSize="18sp"
             android:textStyle="bold" />
 

@@ -1,21 +1,22 @@
 package com.example.app4ll;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBarDrawerToggle;
+
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationView;
 
-public class IndianActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-
-    private DrawerLayout drawerLayout;
+public class IndianActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,24 +26,15 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        drawerLayout = findViewById(R.id.drawer_layout_india);
-        NavigationView navigationView = findViewById(R.id.nav_view_indian);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation_india);
 
-        // Set listener for the Indian navigation
+        // Set listener for the Chinese navigation
         bottomNav.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
             if (itemId == R.id.indianinstrument) {
                 selectedFragment = new IndianInstrument();
-            } else if (itemId == R.id.indianfood) {
+            } else if (itemId == R.id.indianfood) { // Corrected the menu item ID from DestChinaFood
                 selectedFragment = new IndianFood();
             } else if (itemId == R.id.indianhome) {
                 selectedFragment = new IndianFragment();
@@ -56,45 +48,13 @@ public class IndianActivity extends AppCompatActivity implements NavigationView.
             return true;
         });
 
-        // Load IndianFragment by default on startup
+        // Load ChineseFragment by default on startup
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.fragment_container_indian, new IndianFragment())
                     .commit();
             bottomNav.setSelectedItemId(R.id.indianhome);
         }
-    }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        // Handle side navigation item clicks here.
-        int itemId = item.getItemId();
-        Fragment selectedFragment = null;
-
-        if (itemId == R.id.nav_mainPage) { // Assuming these IDs are from your main menu
-            selectedFragment = new HomeFragment();
-        } else if (itemId == R.id.nav_quiz) {
-            selectedFragment = new QuizFragment();
-        } else if (itemId == R.id.nav_about) {
-            selectedFragment = new AboutAppFragment();
-        }
-
-        if (selectedFragment != null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragment_container_indian, selectedFragment)
-                    .commit();
-        }
-
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-/*    @Override
-    public void onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }*/
-}
+        // Removed the incorrect private inner class definition
+    }}
