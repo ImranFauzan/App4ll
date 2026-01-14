@@ -2,13 +2,16 @@ package com.example.app4ll;
 
 import android.media.MediaPlayer;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +21,8 @@ import android.widget.Button;
 public class IndianInstrument extends Fragment {
 
     MediaPlayer mp;
+    private MediaPlayer Sitar, Tambura , Tabla , Mridangam, Bansuri, Nadaswaram, Ghatam, Taal;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -74,6 +79,15 @@ public class IndianInstrument extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Initialize button here after view is created
+        Sitar = MediaPlayer.create(getContext(), R.raw.sitar);
+        Tambura   = MediaPlayer.create(getContext(), R.raw.tambura);
+        Tabla    = MediaPlayer.create(getContext(), R.raw.tabla);
+        Mridangam  = MediaPlayer.create(getContext(), R.raw.mridangam);
+        Bansuri = MediaPlayer.create(getContext(), R.raw.bansuri);
+        Nadaswaram   = MediaPlayer.create(getContext(), R.raw.nadaswaram);
+        Ghatam    = MediaPlayer.create(getContext(), R.raw.ghatam);
+        Taal    = MediaPlayer.create(getContext(), R.raw.taal);
+
         Button btnSitar = view.findViewById(R.id.btnSitarPlay);
         Button btnTambura = view.findViewById(R.id.btnTamburaPlay);
         Button btnTabla = view.findViewById(R.id.btnTablaPlay);
@@ -83,86 +97,43 @@ public class IndianInstrument extends Fragment {
         Button btnGhatam = view.findViewById(R.id.btnGhatamPlay);
         Button btnTaal = view.findViewById(R.id.btnTaalPlay);
 
-        btnSitar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.sitar);
-            }
-        });
-
-        btnTambura.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.tambura);
-            }
-        });
-
-        btnTabla.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.tabla);
-            }
-        });
-
-        btnMridangam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.mridangam);
-            }
-        });
-
-        btnBansuri.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.bansuri);
-            }
-        });
-
-        btnNadaswaram.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.nadaswaram);
-            }
-        });
-
-        btnGhatam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.ghatam);
-            }
-        });
-
-        btnTaal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                playSound(R.raw.taal);
-            }
-        });
-
-
-
-
-
+        setupToggleButton(btnSitar, Sitar);
+        setupToggleButton(btnTambura, Tambura);
+        setupToggleButton(btnTabla, Tabla);
+        setupToggleButton(btnMridangam, Mridangam);
+        setupToggleButton(btnBansuri, Bansuri);
+        setupToggleButton(btnNadaswaram, Nadaswaram);
+        setupToggleButton(btnGhatam, Ghatam);
+        setupToggleButton(btnTaal, Taal);
     }
 
-    private void playSound(int soundResourceId) {
-        // Release previous MediaPlayer if it exists
+    private void setupToggleButton(Button button, MediaPlayer player) {
+        button.setOnClickListener(v -> {
+            if (player.isPlaying()) {
+                player.pause();
+                player.seekTo(0);
+                button.setText("PLAY");
+            } else {
+                player.start();
+                button.setText("STOP");
+            }
+        });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (Sitar != null) Sitar.release();
+        if (Tambura != null) Tambura.release();
+        if (Tabla != null) Tabla.release();
+        if (Mridangam != null) Mridangam.release();
+        if (Bansuri != null) Bansuri.release();
+        if (Nadaswaram != null) Nadaswaram.release();
+        if (Ghatam != null) Ghatam.release();
+        if (Taal != null) Taal.release();
         if (mp != null) {
             mp.release();
             mp = null;
-        }
-        mp = MediaPlayer.create(requireContext(), soundResourceId);
-
-        if (mp != null) {
-            mp.start();
-
-            mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    mediaPlayer.release();
-                    mp = null;
-                }
-            });
         }
     }
 
