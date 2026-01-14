@@ -22,20 +22,43 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     public static String questions[] = {
             "What are the main races in Malaysia?",
-            "Which one is not programming language? ",
-            "Where are you watching this video?"
+            "What kind of instrument is tabla? ",
+            "What is Guzheng made out of?",
+            "Thosai is a traditional food that belongs to which ethnic group?",
+            "What festival that Chinese people celebrate every year?",
+            "Which ethnic group does kompang belongs to?",
+            "What is Roti Canai?",
+            "Which ethnic group does Roti Canai belongs to?",
+            "What color is Nasi Kerabu naturally?",
+            "What malay instruments commonly used in weddings?"
     };
 
     public static String choices[][] = {
             {"Malay, Chinese, Indian", "Malay, Chinese ", "Malay, Iban, Chinese", "Malay, Indian, Iban"},
-            {"Java", "Kotlin", "Notepad", "Python"},
-            {"Facebook", "Whatsapp", "Instagram", "Youtube"},
+            {"Wind instrument", "Percussion", "String instrument", "Solid instrument"},
+            {"Bamboo with strings of copper", "Wood with strings of copper", "Bamboo with strings of nylon/steel", "Wood with strings of nylon/steel"},
+            {"Iban, Chinese, Indian, Malay:"},
+            {"Chinese New Year", "Hari Raya Aidilfitri", "Deepavali", "Pesta Kaamatan"},
+            {"Chinese", "Malay", "Indian", "Others"},
+            {"Fermented rice-and-lentil pancake, Aromatic dish made with Basmathi rice, Flatbread that is crispy outside but soft inside, Flatbread that is crispy inside but soft outside"},
+            {"Indian, Chinese, Malay, Kadazandusun"},
+            {"pink, red, blue, rainbow"},
+            {"marwas, gendang, guzheng, kompang"}
     };
 
     public static String correctAnswer[] = {
             "Malay, Chinese, Indian",
-            "Notepad",
-            "Youtube",
+            "Percussion",
+            "Wood with strings of nylon/steel",
+            "Indian",
+            "Chinese New Year",
+            "Malay",
+            "Flatbread that is crispy outside but soft inside",
+            "Indian",
+            "blue",
+            "kompang"
+
+
     };
 
     @Override
