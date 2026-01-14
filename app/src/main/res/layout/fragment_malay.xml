@@ -23,6 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="212dp"
         android:text="MALAY"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

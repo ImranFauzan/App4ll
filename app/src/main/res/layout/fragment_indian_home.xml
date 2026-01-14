@@ -14,6 +14,7 @@
         android:layout_marginTop="212dp"
         android:fontFamily="serif"
         android:text="INDIAN"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +37,7 @@
         android:layout_marginTop="12dp"
         android:fontFamily="serif"
         android:text="Indian Malaysians are one of the major ethnic communities in Malaysia, mainly descended from South Indians who migrated during the British colonial period to work in plantations, railways, and public services. Today, they make up about 6–7% of the population, with Tamils forming the largest group, alongside Malayalee, Telugu, Sikh, and other communities. Tamil is the most widely spoken Indian language, while Malay and English are commonly used. Most Indian Malaysians practice Hinduism, with others following Christianity, Islam, Sikhism, or Buddhism, and they celebrate cultural festivals such as Deepavali, Thaipusam, and Ponggal. The community has had a strong influence on Malaysian culture, especially through food like roti canai, thosai, nasi kandar, and banana leaf rice, which are enjoyed nationwide, and they continue to contribute significantly to Malaysia’s social, economic, and cultural development."
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

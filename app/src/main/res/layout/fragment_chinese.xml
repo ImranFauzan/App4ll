@@ -14,6 +14,7 @@
         android:layout_marginTop="212dp"
         android:fontFamily="serif"
         android:text="CHINESE"
+        android:textColor="#000000"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,7 @@
         android:fontFamily="serif"
         android:text="Chinese people in Malaysia are one of the main ethnic groups in the country. Most are descendants of immigrants from China who came long ago for trade and work. They have a rich culture, celebrate festivals like Chinese New Year, and speak languages such as Mandarin, Cantonese, and Hokkien. Chinese Malaysians contribute greatly to Malaysia’s economy, food, education, and cultural diversity."
         android:textAlignment="center"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />

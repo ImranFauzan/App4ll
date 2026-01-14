@@ -37,6 +37,7 @@
             android:paddingTop="10dp"
             android:paddingBottom="6dp"
             android:text="String Instruments"
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -60,7 +61,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="Sitar: A long-necked plucked string instrument with a deep, pear-shaped gourd. Known for its sympathetic strings that vibrate to create a shimmering sound, it is the most iconic instrument of the Hindustani tradition in Malaysia." />
+                android:text="Sitar: A long-necked plucked string instrument with a deep, pear-shaped gourd. Known for its sympathetic strings that vibrate to create a shimmering sound, it is the most iconic instrument of the Hindustani tradition in Malaysia."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnSitarPlay"
@@ -89,7 +91,8 @@
                 android:id="@+id/anotherindianinstrument"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tambura : A four-stringed long-necked lute that is not played melodically. Instead, it is plucked continuously to provide a drone. This creates the harmonic foundation that all other musicians use to stay in tune." />
+                android:text="Tambura : A four-stringed long-necked lute that is not played melodically. Instead, it is plucked continuously to provide a drone. This creates the harmonic foundation that all other musicians use to stay in tune."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnTamburaPlay"
@@ -106,6 +109,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="6dp"
             android:text="Percussion Instruments"
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -129,7 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="Tabla: A pair of small hand drums (the wooden Dayan and metal Bayan). It is the primary percussion for Hindustani music and is widely used in Malaysia for Ghazals, Bhajans (devotional songs), and contemporary fusion." />
+                android:text="Tabla: A pair of small hand drums (the wooden Dayan and metal Bayan). It is the primary percussion for Hindustani music and is widely used in Malaysia for Ghazals, Bhajans (devotional songs), and contemporary fusion."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnTablaPlay"
@@ -158,7 +163,8 @@
                 android:id="@+id/textView27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Mridangam :A double-sided, barrel-shaped drum made of wood. It is the king of percussion in Carnatic music. In Malaysia, it is essential for South Indian classical dance (Bharatanatyam) and temple concerts." />
+                android:text="Mridangam :A double-sided, barrel-shaped drum made of wood. It is the king of percussion in Carnatic music. In Malaysia, it is essential for South Indian classical dance (Bharatanatyam) and temple concerts."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnmridangamPlay"
@@ -198,7 +204,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="Bansuri: A side-blown flute made from a single shaft of bamboo. It is deeply spiritual, often associated with Lord Krishna. In Malaysia, it is favored for its meditative, vocal-like quality in both classical and light music." />
+                android:text="Bansuri: A side-blown flute made from a single shaft of bamboo. It is deeply spiritual, often associated with Lord Krishna. In Malaysia, it is favored for its meditative, vocal-like quality in both classical and light music."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnBansuriPlay"
@@ -226,7 +233,8 @@
                 android:id="@+id/textView29"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nadaswaram : A large, powerful double-reed wind instrument (similar to an oboe but much louder). In Malaysian Indian culture, it is considered auspicious (Mangala Vadyam) and is indispensable at weddings and temple processions to signal celebration." />
+                android:text="Nadaswaram : A large, powerful double-reed wind instrument (similar to an oboe but much louder). In Malaysian Indian culture, it is considered auspicious (Mangala Vadyam) and is indispensable at weddings and temple processions to signal celebration."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnNadaswaramPlay"
@@ -242,6 +250,7 @@
             android:paddingTop="16dp"
             android:paddingBottom="6dp"
             android:text="Solid Instruments"
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -266,7 +275,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="8dp"
-                android:text="Ghatam: One of the oldest Indian instruments, it is a specially baked clay pot. The player uses their fingers, palms, and even their belly to create resonant metallic sounds. It is a staple in Malaysian Carnatic ensembles." />
+                android:text="Ghatam: One of the oldest Indian instruments, it is a specially baked clay pot. The player uses their fingers, palms, and even their belly to create resonant metallic sounds. It is a staple in Malaysian Carnatic ensembles."
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnGhatamPlay"
@@ -294,7 +304,8 @@
                 android:id="@+id/textView31"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Taal : Small hand cymbals made of brass. Though simple, they are crucial for maintaining the cycle in devotional sessions and folk dances. " />
+                android:text="Taal : Small hand cymbals made of brass. Though simple, they are crucial for maintaining the cycle in devotional sessions and folk dances. "
+                android:textColor="#000000" />
 
             <Button
                 android:id="@+id/btnTaalPlay"
