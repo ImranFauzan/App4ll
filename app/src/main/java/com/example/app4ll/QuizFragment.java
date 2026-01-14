@@ -16,7 +16,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     TextView totalquestions, question;
     Button ansA, ansB, ansC, ansD, submitBtn;
     int score = 0;
-    int totalQuestion = questions.length;
+    int totalQuestion;
     int currentQuestionIndex = 0;
     String selectedAnswer = "";
 
@@ -37,13 +37,13 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             {"Malay, Chinese, Indian", "Malay, Chinese ", "Malay, Iban, Chinese", "Malay, Indian, Iban"},
             {"Wind instrument", "Percussion", "String instrument", "Solid instrument"},
             {"Bamboo with strings of copper", "Wood with strings of copper", "Bamboo with strings of nylon/steel", "Wood with strings of nylon/steel"},
-            {"Iban, Chinese, Indian, Malay:"},
+            {"Iban", "Chinese", "Indian", "Malay"},
             {"Chinese New Year", "Hari Raya Aidilfitri", "Deepavali", "Pesta Kaamatan"},
             {"Chinese", "Malay", "Indian", "Others"},
-            {"Fermented rice-and-lentil pancake, Aromatic dish made with Basmathi rice, Flatbread that is crispy outside but soft inside, Flatbread that is crispy inside but soft outside"},
-            {"Indian, Chinese, Malay, Kadazandusun"},
-            {"pink, red, blue, rainbow"},
-            {"marwas, gendang, guzheng, kompang"}
+            {"Fermented rice-and-lentil pancake", "Aromatic dish made with Basmathi rice", "Flatbread that is crispy outside but soft inside", "Flatbread that is crispy inside but soft outside"},
+            {"Indian", "Chinese", "Malay", "Kadazandusun"},
+            {"pink", "red", "blue", "rainbow"},
+            {"marwas", "gendang", "guzheng", "kompang"}
     };
 
     public static String correctAnswer[] = {
@@ -57,8 +57,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             "Indian",
             "blue",
             "kompang"
-
-
     };
 
     @Override
@@ -67,6 +65,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        totalQuestion = questions.length;
         totalquestions = view.findViewById(R.id.total_question);
         question = view.findViewById(R.id.question);
         ansA = view.findViewById(R.id.ans_A);
